@@ -17,6 +17,15 @@ app.use(express.static("public")); // for uploading image and icon at our server
 
 app.use(cookieParser()); 
 export {app};
-
-
 //THIS IS ALL ABOUT CONFIGURATIONS  
+
+
+//routes
+import userRouter from './routes/user.routes.js' 
+
+//WE CAN"T USE app.get as we have seperated routes and controller from here
+
+//routes declaration
+app.use("/api/v1/users" , userRouter)   //we will go to http://localhost:8000/api/v1/users/register 
+
+
